@@ -1,11 +1,19 @@
-id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness
-1,Sunrise City,Neon Echo,pop,happy,0.82,118,0.84,0.79,0.18
-2,Midnight Coding,LoRoom,lofi,chill,0.42,78,0.56,0.62,0.71
-3,Storm Runner,Voltline,rock,intense,0.91,152,0.48,0.66,0.10
-4,Library Rain,Paper Lanterns,lofi,chill,0.35,72,0.60,0.58,0.86
-5,Gym Hero,Max Pulse,pop,intense,0.93,132,0.77,0.88,0.05
-6,Spacewalk Thoughts,Orbit Bloom,ambient,chill,0.28,60,0.65,0.41,0.92
-7,Coffee Shop Stories,Slow Stereo,jazz,relaxed,0.37,90,0.71,0.54,0.89
-8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22
-9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78
-10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35
+id,title,artist,genre,mood,energy,tempo_bpm,valence,danceability,acousticness,speechiness,instrumentalness,liveness
+1,Sunrise City,Neon Echo,pop,happy,0.82,118,0.84,0.79,0.18,0.05,0.00,0.11
+2,Midnight Coding,LoRoom,lofi,chill,0.42,78,0.56,0.62,0.71,0.04,0.85,0.09
+3,Storm Runner,Voltline,rock,intense,0.91,152,0.48,0.66,0.10,0.07,0.00,0.14
+4,Library Rain,Paper Lanterns,lofi,chill,0.35,72,0.60,0.58,0.86,0.03,0.91,0.08
+5,Gym Hero,Max Pulse,pop,intense,0.93,132,0.77,0.88,0.05,0.06,0.00,0.12
+6,Spacewalk Thoughts,Orbit Bloom,ambient,chill,0.28,60,0.65,0.41,0.92,0.03,0.94,0.07
+7,Coffee Shop Stories,Slow Stereo,jazz,relaxed,0.37,90,0.71,0.54,0.89,0.04,0.62,0.23
+8,Night Drive Loop,Neon Echo,synthwave,moody,0.75,110,0.49,0.73,0.22,0.05,0.10,0.10
+9,Focus Flow,LoRoom,lofi,focused,0.40,80,0.59,0.60,0.78,0.03,0.88,0.08
+10,Rooftop Lights,Indigo Parade,indie pop,happy,0.76,124,0.81,0.82,0.35,0.06,0.00,0.13
+11,Corner Store Chronicles,Brick Ave,hip-hop,confident,0.78,95,0.72,0.85,0.12,0.31,0.00,0.15
+12,Velvet Hours,Sable June,r&b,romantic,0.55,88,0.79,0.68,0.41,0.08,0.00,0.12
+13,Old Dirt Road,Porch & Pine,folk,nostalgic,0.33,74,0.66,0.45,0.94,0.05,0.14,0.42
+14,Glass Cathedral,Arden Voss,classical,melancholic,0.22,58,0.31,0.28,0.97,0.04,0.93,0.18
+15,Overdrive Festival,Neon Surge,edm,euphoric,0.95,140,0.88,0.93,0.04,0.05,0.07,0.82
+16,Rust and Thunder,Iron Shelf,metal,angry,0.97,168,0.29,0.61,0.07,0.09,0.02,0.17
+17,Island Morning,Sol Drift,reggae,uplifting,0.51,82,0.83,0.72,0.58,0.07,0.04,0.19
+18,Empty Barstool,Hazy Lowe,blues,sad,0.30,66,0.24,0.39,0.88,0.06,0.21,0.35
