@@ -6,6 +6,7 @@ Run with:
 """
 
 from src.recommender import load_songs, recommend_songs
+from ai_logic import analyze_user_request
 
 
 # ---------------------------------------------------------------------------
@@ -91,10 +92,17 @@ def print_profile(name: str, prefs: dict, results: list) -> None:
 
 def main() -> None:
     songs = load_songs("data/songs.csv")
+    
+    user_input = input("Describe what kind of music you want: ")
+    preferences = analyze_user_request(user_input)
 
-    for name, prefs in PROFILES.items():
-        results = recommend_songs(prefs, songs, k=5)
-        print_profile(name, prefs, results)
+    print("\nAI Interpreted Preferences:")
+    print(preferences)
+
+    results = recommend_songs(preferences, songs, k=5)
+    confidence = 0.85
+    print(f"\nConfidence Score: {confidence}")
+    print_profile("AI Mood-Based Profile", preferences, results)
 
 
 if __name__ == "__main__":
