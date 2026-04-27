@@ -10,7 +10,7 @@ What changed in this version:
 
 Users now type natural language input (e.g., "I want something for the gym") instead of selecting a preset profile
 An AI logic layer (ai_logic.py) interprets that input and maps it to a structured preference profile
-A reliability test harness (evaluation.py) automatically validates the AI logic against expected outputs
+A reliability test harness (evaluator.py) automatically validates the AI logic against expected outputs
 Confidence scoring is displayed with every recommendation run
 
 ## How The System Works
@@ -110,9 +110,13 @@ Confidence Score: 0.85
   #1  Deep Focus by Atmosphere  [ambient / chill]  Score: 5.100
       Why: genre match (+2.0), mood match (+1.0), energy proximity (+0.80) ...
 
-Reliability & Testing
+## Reliability & Testing
+
 Run the evaluation script:
-bash ```python evaluation.py
+
+```bash
+python evaluator.py
+```
 
 Sample output:
 Input: I am tired and want calm music
@@ -128,31 +132,40 @@ Expected mood: chill | Actual mood: chill | Result: PASS
 
 ----------------------------------------
 Reliability Score: 3/3 tests passed
-Testing Summary:
+
+## Testing Summary:
+
 All 3 predefined test cases passed. The AI logic layer performs reliably for clear mood keywords. The system struggles when input is ambiguous or contains no recognized keywords — in those cases it falls back to a default pop/happy profile, which may not match user intent. Confidence score is currently fixed at 0.85; a future version would calculate this dynamically based on how many keywords matched.
 
-Design Decisions
+## Design Decisions
+
 Keyword-based NLP over a live API: Keeps the system fully offline with zero dependencies. Trade-off: it only handles keywords it was explicitly programmed for.
 Weighted scoring over collaborative filtering: Simple and explainable. Every recommendation comes with a human-readable reason list. Trade-off: no personalization from listening history.
 Flat confidence score (0.85): Honest placeholder. A real system would compute this from keyword match rate. This was a deliberate simplification for scope.
 Deduplication by song ID in recommender: Prevents duplicate CSV rows from inflating scores — a real reliability guard.
 
-Reflection
+## Reflection
+
 This project taught me that "AI" doesn't always mean a neural network. The scoring engine in this system is a set of weighted math rules — and it still produces results that feel intelligent because it's grounded in real musical attributes. The biggest challenge was making the natural language layer feel connected to the recommender rather than just bolted on. Testing revealed that the fallback default profile is too aggressive — it returns pop results even for wildly different inputs, which would frustrate real users.
 
-Demo Walkthrough
+## Demo Walkthrough
+
 Loom video link: (add your Loom link here before submitting)
 
-Project Structure
+## Project Structure
+
+```
 applied-ai-music-recommender/
 ├── src/
 │   ├── main.py          # Entry point
 │   ├── recommender.py   # Scoring engine
-│   └── ai_logic.py      # NLP preference mapper
+│
 ├── data/
 │   └── songs.csv        # Song catalog
 ├── assets/
 │   └── architecture.png # System diagram
-├── evaluator.py        # Reliability test harness
+├── evaluator.py         # Reliability test harness
+├── ai_logic.py          # NLP preference mapper
 ├── model_card.md        # AI documentation
 └── README.md
+```
