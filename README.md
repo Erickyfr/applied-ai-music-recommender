@@ -5,7 +5,7 @@ An AI-powered music recommendation system that interprets natural language mood 
 ## Base Project
 
 This project extends Music Recommender Simulation (CodePath AI110, Module 1–3).
-The original project was a weighted content-based recommender that scored songs from a CSV catalog against a hardcoded user profile using attributes like genre, mood, energy, valence, and acousticness. It demonstrated how platforms like Spotify use content-based filtering to rank songs without needing user history.
+The original project was a weighted content-based recommender that scored songs from a CSV catalog against a hard-coded user profile using attributes such as genre, mood, energy, valence, and acousticness. It demonstrated how platforms like Spotify use content-based filtering to rank songs without needing user history.
 What changed in this version:
 
 Users now type natural language input (e.g., "I want something for the gym") instead of selecting a preset profile
@@ -43,7 +43,7 @@ data/songs.csv — song catalog with genre, mood, energy, valence, acousticness,
 ## Algorithm Recipe
 
 FeaturePointsGenre match+2.0Mood match+1.0Energy proximityup to +1.0Valence proximityup to +0.5Instrumentalness proximityup to +0.5Acousticness matchup to +0.3
-Songs are ranked highest score first. Top 5 are returned by default.
+Songs are ranked in order of highest score first. The top 5 are returned by default.
 
 ## Setup Instructions
 
@@ -135,18 +135,18 @@ Reliability Score: 3/3 tests passed
 
 ## Testing Summary:
 
-All 3 predefined test cases passed. The AI logic layer performs reliably for clear mood keywords. The system struggles when input is ambiguous or contains no recognized keywords — in those cases it falls back to a default pop/happy profile, which may not match user intent. Confidence score is currently fixed at 0.85; a future version would calculate this dynamically based on how many keywords matched.
+All 3 predefined test cases passed. The AI logic layer performs reliably for clear mood keywords. The system struggles when input is ambiguous or contains no recognized keywords; in those cases, it falls back to a default pop/happy profile, which may not match user intent. The confidence score is currently fixed at 0.85; a future version would calculate it dynamically based on how many keywords are matched.
 
 ## Design Decisions
 
-Keyword-based NLP over a live API: Keeps the system fully offline with zero dependencies. Trade-off: it only handles keywords it was explicitly programmed for.
-Weighted scoring over collaborative filtering: Simple and explainable. Every recommendation comes with a human-readable reason list. Trade-off: no personalization from listening history.
-Flat confidence score (0.85): Honest placeholder. A real system would compute this from keyword match rate. This was a deliberate simplification for scope.
-Deduplication by song ID in recommender: Prevents duplicate CSV rows from inflating scores — a real reliability guard.
+Keyword-based NLP over a live API: Keeps the system fully offline with zero dependencies. Trade-off: it only handles keywords for which it was explicitly programmed.
+Weighted scoring over collaborative filtering: Simple and explainable. Every recommendation comes with a human-readable list of reasons. Trade-off: no personalization from listening history.
+Flat confidence score (0.85): Honest placeholder. A real system would compute this from the keyword match rate. This was a deliberate simplification for scope.
+Deduplication by song ID in recommender: Prevents duplicate CSV rows from inflating scores, a real reliability guard.
 
 ## Reflection
 
-This project taught me that "AI" doesn't always mean a neural network. The scoring engine in this system is a set of weighted math rules — and it still produces results that feel intelligent because it's grounded in real musical attributes. The biggest challenge was making the natural language layer feel connected to the recommender rather than just bolted on. Testing revealed that the fallback default profile is too aggressive — it returns pop results even for wildly different inputs, which would frustrate real users.
+This project taught me that "AI" doesn't always mean a neural network. The scoring engine in this system is a set of weighted math rules — and it still produces results that feel intelligent because it's grounded in real musical attributes. The biggest challenge was making the natural language layer feel connected to the recommender rather than just bolted on. Testing revealed that the fallback default profile is too aggressive; it returns pop results even for wildly different inputs, which would frustrate real users.
 
 ## Demo Walkthrough
 
