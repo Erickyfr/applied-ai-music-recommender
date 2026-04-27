@@ -150,7 +150,7 @@ This project taught me that "AI" doesn't always mean a neural network. The scori
 
 ## Demo Walkthrough
 
-Loom video link: (add your Loom link here before submitting)
+#LINK - https://www.loom.com/share/53fd0ed0ac8141a89a6e859947321f14
 
 ## Project Structure
 
